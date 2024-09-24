@@ -4,4 +4,5 @@ interface SuperheroRepository {
 
     fun getAllSuperheroes(): List<Superhero>
 
+    fun getSuperheroById(id: Int): Superhero?
 }

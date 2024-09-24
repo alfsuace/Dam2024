@@ -13,5 +13,8 @@ class SuperHeroActivity : AppCompatActivity() {
         val viewModel = superheroFactory.buildViewModel()
         val superheroes = viewModel.viewCreated()
         Log.d("@dev", superheroes.toString())
+        val id = 2
+        val heroById = viewModel.viewCreatedById(id)
+        Log.d("@dev", heroById.toString())
     }
 }

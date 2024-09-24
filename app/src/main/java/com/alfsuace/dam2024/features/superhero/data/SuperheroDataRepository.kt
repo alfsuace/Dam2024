@@ -9,4 +9,10 @@ class SuperheroDataRepository(private val superheroMockDataRepository: Superhero
     override fun getAllSuperheroes(): List<Superhero> {
         return superheroMockDataRepository.getSuperheroes()
     }
+
+    override fun getSuperheroById(id: Int): Superhero? {
+        return superheroMockDataRepository.getSuperheroes().firstOrNull {
+            it.id == id
+        }
+    }
 }
