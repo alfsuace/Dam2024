@@ -25,7 +25,7 @@ data class PowerstatsApiModel(
 
 data class AppearanceApiModel(
     @SerializedName("gender") val gender: String,
-    @SerializedName("race") val race: String?,
+    @SerializedName("race") val race: String,
     @SerializedName("height") val height: List<String>,
     @SerializedName("weight") val weight: List<String>,
     @SerializedName("eyeColor") val eyeColor: String,

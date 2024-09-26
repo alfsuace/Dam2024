@@ -4,23 +4,19 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class ApiResource {
-    private val urlEndPoint = "https://avilalive.sitehub.es/api/v1/"
+class SuperheroApiResource {
+    private val urlEndPoint = "https://akabab.github.io/superhero-api/api/"
     private var apiEndPoint: SuperheroApiServices
 
     init {
         apiEndPoint = buildApiEndPoint()
     }
 
-    private fun buildClient(): Retrofit {
+    private fun buildApiEndPoint(): SuperheroApiServices {
         return Retrofit.Builder()
             .baseUrl(urlEndPoint)
             .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
-
-    private fun buildApiEndPoint(): SuperheroApiServices {
-        return buildClient().create(SuperheroApiServices::class.java)
+            .build().create(SuperheroApiServices::class.java)
     }
 
     suspend fun getAllSuperheroes(): List<SuperheroApiModel>? {
@@ -28,8 +24,8 @@ class ApiResource {
 
     }
 
-    suspend fun getResource(id: Int): SuperheroApiModel? {
-        return apiEndPoint.getSuperHeroById(id).body()
+    suspend fun getSuperheroById(id: Int): SuperheroApiModel? {
+        return apiEndPoint.getSuperHeroById(id)?.body()
 
     }
 }

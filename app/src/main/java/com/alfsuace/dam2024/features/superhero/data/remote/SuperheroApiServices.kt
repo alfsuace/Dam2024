@@ -10,5 +10,5 @@ interface SuperheroApiServices {
     suspend fun getAllSuperheroes(): Response<List<SuperheroApiModel>>
 
     @GET("all/{id}.json")
-    suspend fun getSuperHeroById(@Path("id") id: Int): Response<SuperheroApiModel>
+    suspend fun getSuperHeroById(@Path("id") id: Int): Response<SuperheroApiModel>?
 }

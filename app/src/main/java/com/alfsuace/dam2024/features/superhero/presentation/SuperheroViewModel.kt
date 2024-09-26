@@ -10,11 +10,11 @@ class SuperheroViewModel(
     private val superheroByIdUseCase: GetSuperheroByIdUseCase
 ) : ViewModel() {
 
-    fun viewCreated(): List<Superhero> {
+    suspend fun viewCreated(): List<Superhero> {
         return superheroesUseCase.invoke()
     }
 
-    fun viewCreatedById(id: Int): Superhero? {
+    suspend fun viewCreatedById(id: Int): Superhero? {
         return superheroByIdUseCase.invoke(id)
     }
 

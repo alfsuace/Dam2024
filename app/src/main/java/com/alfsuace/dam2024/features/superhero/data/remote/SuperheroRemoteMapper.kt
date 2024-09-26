@@ -46,12 +46,12 @@ fun AppearanceApiModel.toModel(): Appearance {
 
 fun BiographyApiModel.toModel(): Biography {
     return Biography(
-        this.fullName,
+        this.fullName ?: "Unknown",
         this.alterEgos,
         this.aliases,
-        this.placeOfBirth,
+        this.placeOfBirth ?: "Unknow",
         this.firstAppearance,
-        this.publisher,
+        this.publisher ?: "Unknow",
         this.alignment
     )
 }
